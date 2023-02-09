@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 const btn = document.querySelector(".btn");
+const form = document.querySelector(".form");
 
 let myLibrary = [];
 let containerForBookDiv = [];
@@ -41,4 +42,10 @@ function appendBookToContainer() {
 }
 appendBookToContainer();
 
-btn.addEventListener("click", appendBookToContainer);
+btn.addEventListener("click", function () {
+  if (form.style.display === "none") {
+    form.style.display = "block";
+  } else {
+    form.style.display = "none";
+  }
+});

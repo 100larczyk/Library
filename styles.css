@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.newBook {
+  width: 15rem;
+  height: 9rem;
+  background-color: rgb(153, 228, 103);
+  border: 1px solid black;
+  white-space: pre;
+}
+
+header {
+  height: 1rem;
+  background-color: grey;
+}

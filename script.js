@@ -4,13 +4,15 @@ const btn = document.querySelector(".btn");
 
 //form's variables
 const form = document.querySelector(".form");
-const title = document.querySelector("title");
-const author = document.querySelector("author");
-const pages = document.querySelector("pages");
-const read = document.querySelector("read");
+// const title = document.querySelector("title").value;
+// const author = document.querySelector("author").value;
+// const pages = document.querySelector("pages").value;
+// const read = document.querySelector("read").value;
+const submit = document.querySelector(".submit");
 
 let myLibrary = [];
 let containerForBookDiv = [];
+let addedBook;
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -55,4 +57,18 @@ btn.addEventListener("click", function () {
   } else {
     form.style.display = "none";
   }
+});
+
+submit.addEventListener("click", function (event) {
+  event.preventDefault();
+  const title = document.querySelector("[name='title']").value;
+  const author = document.querySelector("[name='author']").value;
+  const pages = document.querySelector("[name='pages']").value;
+  const read = document.querySelector("[name='read']").value;
+
+  addedBook = new Book(title, author, pages, read);
+  addBookToLibrary(addedBook);
+  appendBookToContainer();
+  form.style.display = "none";
+  console.log(myLibrary);
 });

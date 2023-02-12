@@ -1,6 +1,13 @@
+//global variables
 const container = document.querySelector(".container");
 const btn = document.querySelector(".btn");
+
+//form's variables
 const form = document.querySelector(".form");
+const title = document.querySelector("title");
+const author = document.querySelector("author");
+const pages = document.querySelector("pages");
+const read = document.querySelector("read");
 
 let myLibrary = [];
 let containerForBookDiv = [];

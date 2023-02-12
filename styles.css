@@ -24,7 +24,7 @@ header {
 }
 
 .form {
-  width: 250px;
+  width: 300px;
   height: 350px;
   position: absolute;
   left: 0;
@@ -59,6 +59,15 @@ label {
   font-size: 0.75rem;
   font-weight: bold;
 }
+.wrapper label,
+.wrapper input {
+  display: inline;
+  margin: 0.2rem;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+}
+
 .addButton {
   margin-top: 1rem;
   width: 12rem;

@@ -32,13 +32,14 @@ header {
   top: 0;
   bottom: 0;
   margin: auto;
+  padding-top: 1.5rem;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 1px black solid;
   border-radius: 0.5rem;
   text-align: center;
-  display: flex;
   font-family: "Raleway", sans-serif;
   background-color: rgb(170, 170, 170);
 }
@@ -47,7 +48,7 @@ input,
 label {
   display: block;
   margin: auto;
-  width: 12rem;
+  width: 14.9rem;
   height: 1.5rem;
 }
 
@@ -67,10 +68,14 @@ label {
   height: 1rem;
   vertical-align: middle;
 }
+.buttonContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
 
-.addButton {
+.formButton {
   margin-top: 1rem;
-  width: 12rem;
+  width: 7rem;
   height: 2rem;
   font-weight: bold;
 }

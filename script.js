@@ -11,7 +11,6 @@ const form = document.querySelector(".form");
 const submit = document.querySelector(".submit");
 
 let myLibrary = [];
-let containerForBookDiv = [];
 let addedBook;
 
 function Book(title, author, pages, read) {
@@ -39,18 +38,21 @@ function createDiv(element) {
   bookDiv.className = "newBook";
   bookDiv.textContent = `Title: ${element.title} \r\n Author: ${element.author} \r\n Pages: ${element.pages} \r\n Read: ${element.read}`;
   const bookBtn = document.createElement("button");
+  const bookBtnIndex = element.index;
   bookBtn.id = "bookBtn";
   bookBtn.textContent = "remove";
+
   bookDiv.appendChild(bookBtn);
   return bookDiv;
 }
 
 function appendBookToContainer() {
-  containerForBookDiv = [];
+  //   containerForBookDiv = [];
   container.textContent = "";
   myLibrary.forEach((element) => {
-    containerForBookDiv.push(createDiv(element));
-    containerForBookDiv.forEach((div) => container.appendChild(div));
+    // containerForBookDiv.push
+    container.appendChild(createDiv(element));
+    // containerForBookDiv.forEach((div) => container.appendChild(div));
   });
 }
 appendBookToContainer();

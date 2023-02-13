@@ -48,7 +48,6 @@ function createDiv(Book) {
     console.log(myLibrary);
   });
 
-  const bookBtnIndex = Book.title;
   return bookDiv;
 }
 

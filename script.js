@@ -1,5 +1,5 @@
 //global variables
-const container = document.querySelector(".container");
+const container = document.querySelector(".container"); //place for books to be display
 const btn = document.querySelector(".btn");
 
 //form's variables
@@ -33,26 +33,29 @@ addBookToLibrary(starWars);
 addBookToLibrary(harryPotter);
 console.log(myLibrary);
 
-function createDiv(element) {
+function createDiv(Book) {
   const bookDiv = document.createElement("div");
   bookDiv.className = "newBook";
-  bookDiv.textContent = `Title: ${element.title} \r\n Author: ${element.author} \r\n Pages: ${element.pages} \r\n Read: ${element.read}`;
+  bookDiv.textContent = `Title: ${Book.title} \r\n Author: ${Book.author} \r\n Pages: ${Book.pages} \r\n Read: ${Book.read}`;
   const bookBtn = document.createElement("button");
-  const bookBtnIndex = element.index;
   bookBtn.id = "bookBtn";
   bookBtn.textContent = "remove";
-
   bookDiv.appendChild(bookBtn);
+  bookBtn.addEventListener("click", () => {
+    bookDiv.remove();
+    const index = myLibrary.indexOf(Book);
+    myLibrary.splice(index, 1);
+    console.log(myLibrary);
+  });
+
+  const bookBtnIndex = Book.title;
   return bookDiv;
 }
 
 function appendBookToContainer() {
-  //   containerForBookDiv = [];
   container.textContent = "";
-  myLibrary.forEach((element) => {
-    // containerForBookDiv.push
-    container.appendChild(createDiv(element));
-    // containerForBookDiv.forEach((div) => container.appendChild(div));
+  myLibrary.forEach((Book) => {
+    container.appendChild(createDiv(Book));
   });
 }
 appendBookToContainer();
@@ -76,5 +79,6 @@ submit.addEventListener("click", function (event) {
   addBookToLibrary(addedBook);
   appendBookToContainer();
   form.style.display = "none";
+  form.reset();
   console.log(myLibrary);
 });

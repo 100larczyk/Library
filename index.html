@@ -9,37 +9,41 @@
   </head>
   <body>
     <header></header>
-    <button class="btn">New Book</button>
-    <form class="form" style="display: none">
-      <label for="title">Title</label>
-      <input type="text" name="title" id="title" /> <br />
-      <label for="author">Author</label>
-      <input type="text" name="author" id="author" /> <br />
-      <label for="pages">Number of pages</label>
-      <input type="number" name="pages" id="pages" /> <br />
-      <label>Have you read it?</label>
-      <label for="checkbox-2">
-        <div class="toggle-button-cover">
-          <div class="button-cover">
-            <div class="button r" id="button-2">
-              <input
-                type="checkbox"
-                name="checkbox-2"
-                class="checkbox"
-                id="checkbox-2"
-              />
-              <div class="knobs"></div>
-              <div class="layer"></div>
+    <div class="wrapperFlex">
+      <aside>
+        <button class="btn">New Book</button>
+      </aside>
+      <form class="form" style="display: none">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" /> <br />
+        <label for="author">Author</label>
+        <input type="text" name="author" id="author" /> <br />
+        <label for="pages">Number of pages</label>
+        <input type="number" name="pages" id="pages" /> <br />
+        <label>Have you read it?</label>
+        <label for="checkbox-2">
+          <div class="toggle-button-cover">
+            <div class="button-cover">
+              <div class="button r" id="button-2">
+                <input
+                  type="checkbox"
+                  name="checkbox-2"
+                  class="checkbox"
+                  id="checkbox-2"
+                />
+                <div class="knobs"></div>
+                <div class="layer"></div>
+              </div>
             </div>
           </div>
+        </label>
+        <div class="buttonContainer">
+          <button class="submit formButton" type="submit">Add</button>
+          <button class="close formButton">Close</button>
         </div>
-      </label>
-      <div class="buttonContainer">
-        <button class="submit formButton" type="submit">Add</button>
-        <button class="close formButton">Close</button>
-      </div>
-    </form>
-    <div class="container"></div>
+      </form>
+      <div class="container"></div>
+    </div>
     <footer></footer>
 
     <script src="script.js"></script>

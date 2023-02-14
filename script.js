@@ -9,6 +9,7 @@ const form = document.querySelector(".form");
 // const pages = document.querySelector("pages")
 // const read = document.querySelector("read")
 const submit = document.querySelector(".submit");
+const close = document.querySelector(".close");
 
 let myLibrary = [];
 let addedBook;
@@ -24,9 +25,9 @@ function addBookToLibrary(Book) {
   myLibrary.push(Book);
 }
 
-const hobbit = new Book("Hobbit", "J.R.R. Tolkien", "700", "not read yet");
-const starWars = new Book("Star Wars", "Someone", "600", "read");
-const harryPotter = new Book("Harry Potter", "J.K. Rowling", "1000", "read");
+const hobbit = new Book("Hobbit", "J.R.R. Tolkien", "700", "No");
+const starWars = new Book("Star Wars", "Someone", "600", "Yes");
+const harryPotter = new Book("Harry Potter", "J.K. Rowling", "1000", "Yes");
 
 addBookToLibrary(hobbit);
 addBookToLibrary(starWars);
@@ -37,11 +38,11 @@ function createDiv(Book) {
   const bookDiv = document.createElement("div");
   bookDiv.className = "newBook";
   bookDiv.textContent = `Title: ${Book.title} \r\n Author: ${Book.author} \r\n Pages: ${Book.pages} \r\n Read: ${Book.read}`;
-  const bookBtn = document.createElement("button");
-  bookBtn.id = "bookBtn";
-  bookBtn.textContent = "remove";
-  bookDiv.appendChild(bookBtn);
-  bookBtn.addEventListener("click", () => {
+  const removeBtn = document.createElement("button");
+  removeBtn.id = "removeBtn";
+  removeBtn.textContent = "remove";
+  bookDiv.appendChild(removeBtn);
+  removeBtn.addEventListener("click", () => {
     bookDiv.remove();
     const index = myLibrary.indexOf(Book);
     myLibrary.splice(index, 1);
@@ -62,8 +63,6 @@ appendBookToContainer();
 btn.addEventListener("click", function () {
   if (form.style.display === "none") {
     form.style.display = "block";
-  } else {
-    form.style.display = "none";
   }
 });
 
@@ -72,7 +71,8 @@ submit.addEventListener("click", function (event) {
   const title = document.querySelector("[name='title']").value;
   const author = document.querySelector("[name='author']").value;
   const pages = document.querySelector("[name='pages']").value;
-  const readValue = document.querySelector("[name='read']:checked").value;
+  const checkbox = document.querySelector("[name='checkbox-2']");
+  const readValue = checkbox.checked ? "No" : "Yes";
 
   addedBook = new Book(title, author, pages, readValue);
   addBookToLibrary(addedBook);
@@ -80,4 +80,9 @@ submit.addEventListener("click", function (event) {
   form.style.display = "none";
   form.reset();
   console.log(myLibrary);
+});
+
+close.addEventListener("click", () => {
+  form.reset();
+  form.style.display = "none";
 });

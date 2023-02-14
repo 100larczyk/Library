@@ -17,13 +17,23 @@
       <input type="text" name="author" id="author" /> <br />
       <label for="pages">Number of pages</label>
       <input type="number" name="pages" id="pages" /> <br />
-      <label for="read">Have you read it?</label>
-      <div class="wrapper">
-        <label for="readYes">Yes, I have</label>
-        <input type="radio" name="read" id="readYes" value="Yes" checked />
-        <label for="readNo">No, I haven't</label>
-        <input type="radio" name="read" id="readNo" value="No" />
-      </div>
+      <label>Have you read it?</label>
+      <label for="checkbox-2">
+        <div class="toggle-button-cover">
+          <div class="button-cover">
+            <div class="button r" id="button-2">
+              <input
+                type="checkbox"
+                name="checkbox-2"
+                class="checkbox"
+                id="checkbox-2"
+              />
+              <div class="knobs"></div>
+              <div class="layer"></div>
+            </div>
+          </div>
+        </div>
+      </label>
       <div class="buttonContainer">
         <button class="submit formButton" type="submit">Add</button>
         <button class="close formButton">Close</button>

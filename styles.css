@@ -6,21 +6,19 @@ body {
   margin: 0;
   padding: 0;
 }
+.wrapperFlex {
+  display: flex;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
-}
-.newBook {
-  width: 15rem;
-  height: 9rem;
-  background-color: rgb(153, 228, 103);
-  border: 1px solid black;
-  white-space: pre;
+  justify-content: space-around;
 }
 
 header {
-  height: 1rem;
-  background-color: grey;
+  height: 4rem;
+  background-color: rgb(54, 54, 54);
 }
 
 footer {
@@ -28,11 +26,42 @@ footer {
   width: 100%;
   bottom: 0;
   left: 0;
-  height: 1rem;
-  background-color: grey;
+  height: 4rem;
+  background-color: rgb(54, 54, 54);
 }
 
-/* form's styles */
+aside {
+  min-width: 5rem;
+}
+/* book container styles start*/
+.newBook {
+  position: relative;
+  width: 18rem;
+  height: 12rem;
+  background-color: rgb(163, 163, 163);
+  border: 1px solid black;
+  white-space: pre-wrap;
+  padding: 2rem;
+  line-height: 1.25;
+  color: white;
+  border-style: none;
+  margin: 1rem;
+}
+
+/* book container styles end */
+#removeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+#removeBtn:hover {
+}
+/* form's styles start*/
 
 .form {
   width: 300px;
@@ -91,6 +120,8 @@ label {
   height: 2rem;
   font-weight: bold;
 }
+
+/* form's styles end */
 
 /* toggle button */
 

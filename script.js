@@ -25,7 +25,12 @@ function addBookToLibrary(Book) {
   myLibrary.push(Book);
 }
 
-const hobbit = new Book("Hobbit", "J.R.R. Tolkien", "700", "No");
+const hobbit = new Book(
+  "Hobbit dasdasdasdas asdasuihdasdhas asiudhaiu",
+  "J.R.R. Tolkien sdfsdfsdf",
+  "700",
+  "No"
+);
 const starWars = new Book("Star Wars", "Someone", "600", "Yes");
 const harryPotter = new Book("Harry Potter", "J.K. Rowling", "1000", "Yes");
 
@@ -37,16 +42,15 @@ console.log(myLibrary);
 function createDiv(Book) {
   const bookDiv = document.createElement("div");
   bookDiv.className = "newBook";
-  bookDiv.textContent = `Title: ${Book.title} \r\n Author: ${Book.author} \r\n Pages: ${Book.pages} \r\n Read: ${Book.read}`;
+  bookDiv.textContent = `Title: ${Book.title} \r\nAuthor: ${Book.author} \r\nPages: ${Book.pages} \r\nRead: ${Book.read}`;
   const removeBtn = document.createElement("button");
   removeBtn.id = "removeBtn";
-  removeBtn.textContent = "remove";
+  removeBtn.textContent = "X";
   bookDiv.appendChild(removeBtn);
   removeBtn.addEventListener("click", () => {
     bookDiv.remove();
     const index = myLibrary.indexOf(Book);
     myLibrary.splice(index, 1);
-    console.log(myLibrary);
   });
 
   return bookDiv;

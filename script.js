@@ -25,9 +25,9 @@ function addBookToLibrary(Book) {
   myLibrary.push(Book);
 }
 
-const hobbit = new Book("Hobbit", "J.R.R. Tolkien", "700", "not read yet");
-const starWars = new Book("Star Wars", "Someone", "600", "read");
-const harryPotter = new Book("Harry Potter", "J.K. Rowling", "1000", "read");
+const hobbit = new Book("Hobbit", "J.R.R. Tolkien", "700", "No");
+const starWars = new Book("Star Wars", "Someone", "600", "Yes");
+const harryPotter = new Book("Harry Potter", "J.K. Rowling", "1000", "Yes");
 
 addBookToLibrary(hobbit);
 addBookToLibrary(starWars);
@@ -49,7 +49,6 @@ function createDiv(Book) {
     console.log(myLibrary);
   });
 
-  const removeBtnIndex = Book.title;
   return bookDiv;
 }
 
@@ -72,7 +71,8 @@ submit.addEventListener("click", function (event) {
   const title = document.querySelector("[name='title']").value;
   const author = document.querySelector("[name='author']").value;
   const pages = document.querySelector("[name='pages']").value;
-  const readValue = document.querySelector("[name='read']:checked").value;
+  const checkbox = document.querySelector("[name='checkbox-2']");
+  const readValue = checkbox.checked ? "No" : "Yes";
 
   addedBook = new Book(title, author, pages, readValue);
   addBookToLibrary(addedBook);

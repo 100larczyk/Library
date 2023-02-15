@@ -8,6 +8,8 @@ body {
 }
 .wrapperFlex {
   display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -15,8 +17,7 @@ body {
   flex-wrap: wrap;
   /* justify-content: space-around; */
   gap: 2rem;
-  padding-left: 2rem;
-  padding-top: 2rem;
+  padding: 1.5rem;
 }
 
 header {
@@ -34,9 +35,14 @@ footer {
 }
 
 aside {
-  min-width: 5rem;
+  max-width: 7rem;
+  min-width: 7rem;
   min-height: -webkit-fill-available;
   border-right: solid 3px rgb(54, 54, 54, 0.1);
+}
+
+.numberOfBooks {
+  display: block;
 }
 /* book container and childs styles start*/
 .newBook {
